@@ -29,25 +29,23 @@ fn compare_values(vec: Vec<Vec<u32>>) {
     for elf in vec {
         totals.push(calculate_sum(elf));
     }
-    find_three_largest(totals);
+    find_largest(&totals);
+    find_three_largest(&totals);
 }
 
 fn calculate_sum(vec: Vec<u32>) -> u32 {
     vec.iter().sum()
 }
 
-fn _find_largest(vec: Vec<u32>) -> u32 {
-    *vec.iter().max().unwrap()
+fn find_largest(vec: &Vec<u32>) {
+    let num = *vec.iter().max().unwrap();
+    println!("The largest sum is {}", num.to_string());
 }
 
-fn _print_largest(num: u32) {
-    println!("Largest value is {}", num.to_string());
-}
-
-fn find_three_largest(vec: Vec<u32>) {
+fn find_three_largest(vec: &Vec<u32>) {
     let mut sorted = vec.clone();
     sorted.sort();
     sorted.reverse();
     let total = sorted[0] + sorted[1] + sorted[2];
-    println!("{total}");
+    println!("The total of the three largest sum is {total}");
 }
