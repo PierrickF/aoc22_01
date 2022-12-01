@@ -5,7 +5,7 @@ Parse the input file and calculate the sum of each parapgraph.\
 Find the largest sum.
 
 ## Task 2
-Find the three largest sums.
+Find the three largest sums.\
 Calculate their total.
 
 
